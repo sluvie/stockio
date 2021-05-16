@@ -5,6 +5,8 @@ class Stock:
     def __init__(self) -> None:
         pass
 
+    
+    # download data from yahoo finance
     def download(self, stocks, interval, period):
         data = yf.download( \
             # tickers list or string as well
@@ -30,5 +32,22 @@ class Stock:
         return (data)
 
 
+    # indicator SMA (simple moving average)
+    def SMA(self, data, interval):
+        return (data['Close'].rolling(window=interval).mean())
 
-        
+
+    # indicator EMA (exponential moving average)
+    def EMA(self, data, interval):
+        pass
+
+
+    # indicator BB (bolllinger bands)
+    def BBands(self, data, interval):
+        pass
+
+
+    # 1. Analyst
+    # analyst the trend based on EMA
+    def analyst(self, data):
+        pass
