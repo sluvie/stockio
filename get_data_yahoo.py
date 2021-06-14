@@ -3,8 +3,11 @@ from stockio.graph import Graph
 
 if __name__ == '__main__':
     stock = Stock()
-    df = stock.download("AAPL", "1d", "6mo")
+
+    # download data from yahoo
+    df = stock.download("AALI.JK", "1d", "6mo")
     print(df)
 
+    # show the graph
     graph = Graph()
-    graph.render(df, "AAPL Stock", "date", "close price")
+    graph.render(df, "AALI Stock", "date", "close price")
